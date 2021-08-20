@@ -48,5 +48,5 @@ if __name__ == '__main__':
 
     omatrix.fill_all((0, 0, 0))
 
-    omatrix.matrix = imgTools.imgToArray().img_to_array("test.jpg")
+    omatrix.matrix = imgTools.imgToArray().img_to_array(r"/home/pi/matrix/Libraries/test.jpg")
     omatrix.submit_all()

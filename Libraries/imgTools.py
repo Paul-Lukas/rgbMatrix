@@ -1,14 +1,20 @@
-import PIL
+from PIL import Image
 
 class imgToArray:
     img = object
+    oarray = list
 
-    def img_to_array(self, img_path):
-        img = PIL.Image.open(img_path)
-        ow, oh = img.size()
+    def img_to_array(img_path):
+        img = Image.open(img_path)
+        ow = img.size[0]
+        oh = img.size[1]
 
-        ratio = oh / ow
+        ratio = int((oh / ow) * 15)
 
-        out = img.resize((15, ratio * 15))
+        size = (15, ratio)
 
-        return list(out)
+        out = img.resize(size)
+
+        oarray = [[out.getpixel((j, i)) for j in range(size[0])] for i in range(size[1])]
+
+        return print(oarray)
