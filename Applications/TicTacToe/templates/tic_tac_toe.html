@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <header>
+      <h3>Tic Tac Toe</h3>
+    </header>
+
+    <table class="game">
+      <tr>
+        <td id="0" onclick="click(this)">-</td>
+        <td id="1" onclick="click(this)">-</td>
+        <td id="2" onclick="click(this)">-</td>
+      </tr>
+      <tr>
+        <td id="3" onclick="click(this)">-</td>
+        <td id="4" onclick="click(this)">-</td>
+        <td id="5" onclick="click(this)">-</td>
+      </tr>
+      <tr>
+        <td id="6" onclick="click(this)">-</td>
+        <td id="7" onclick="click(this)">-</td>
+        <td id="8" onclick="click(this)">-</td>
+      </tr>
+    </table>
+
+    <input type="hidden" name="secret" value="{{ secret }}">
+    <input type="hidden" name="pid" value="{{ pid }}">
+    <input type="hidden" name="pchar" value="{{ pchar }}">
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        setInterval(loadGameState(), 3000)
+      })
+
+
+      function click(ele) {
+        const xhttp = new XMLHttpRequest();
+
+        var id = ele.id;
+        var secret = document.getElementsByName('secret').value;
+        var pid = document.getElementsByName('pid').value;
+
+        xhttp.open("GET", "ticHandler.txt?pid=" + pid + "&id=" + id + "&secret=" + secret);
+        xhttp.onloade = () => {
+          const resp = xhttp.responseText;
+          if (xhttp.responseText == "ok") {
+            ele.innerHTML = document.getElementsByName('pchar').value;
+            //TODO: Change color
+          } else {
+            //TODO: add Wait for opponent player notification
+            console.log(xhttp.responseText)
+          }
+        }
+
+        xhttp.send();
+      }
+
+      function loadGameState() {
+        const xhttp =  new XMLHttpRequest();
+        xhttp.open("GET", "ticGetter.txt");
+        xhttp.onloade = () => {
+          const resp = xhttp.responseText;
+          const arr = resp.split(";");
+
+          arr.forEach((field, i) => {
+            getElementById(str(i)).innerHTML = field
+          });
+
+        }
+      }
+
+    </script>
+  </body>
+</html>
