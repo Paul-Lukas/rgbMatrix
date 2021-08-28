@@ -5,7 +5,6 @@ import neopixel
 
 import matrix
 
-import imgTools
 
 if __name__ == '__main__':
     pixels = neopixel.NeoPixel(board.D18, 450, auto_write=False)
@@ -43,10 +42,10 @@ if __name__ == '__main__':
             else:
                 omatrix[j, i] = (0, 0, 255)
 
-            time.sleep(0.5)
+            time.sleep(0.25)
             omatrix.submit_all()
 
     omatrix.fill_all((0, 0, 0))
-
-    omatrix.matrix = imgTools.imgToArray().img_to_array(r"/home/pi/matrix/Libraries/test.jpg")
     omatrix.submit_all()
+    
+    print("Fertig")

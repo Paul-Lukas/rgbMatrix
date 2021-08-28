@@ -10,13 +10,13 @@ class NeoMatrix:
     width = 0
     height = 0
 
-    pixels = object
+    __pixels = object
 
     def __init__(self, width: int, height: int, pixels: neopixel.NeoPixel):
         self.width = width
         self.height = height
 
-        self.pixels = pixels
+        self.__pixels = pixels
 
         self.matrix = [[(0, 0, 0) for j in range(height)] for i in range(width)]
 
@@ -36,9 +36,9 @@ class NeoMatrix:
         """
         i = 0
         for pixel in self.__convert_matrix(self.matrix):
-            self.pixels[i] = pixel
+            self.__pixels[i] = pixel
             i += 1
-        self.pixels.write()
+        self.__pixels.write()
 
     def fill_all(self, color: tuple):
         """
@@ -48,8 +48,8 @@ class NeoMatrix:
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[i])):
                 self.matrix[i][j] = color
-        self.pixels.fill(color)
-        self.pixels.write()
+        self.__pixels.fill(color)
+        self.__pixels.write()
 
     def __convert_matrix(self, matrix) -> list:
         """
