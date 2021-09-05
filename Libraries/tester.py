@@ -1,14 +1,15 @@
 import time
 
-import board
-import neopixel
+#import board
+#import neopixel
 
-import matrix
+#import matrix
 
+import matrixGui
 
 if __name__ == '__main__':
-    pixels = neopixel.NeoPixel(board.D18, 450, auto_write=False)
-    omatrix = matrix.NeoMatrix(15, 30, pixels)
+    #pixels = neopixel.NeoPixel(board.D18, 450, auto_write=False)
+    omatrix = matrixGui.NeoMatrixGui(15, 30)
 
     omatrix.fill_all((0, 0, 0))
     time.sleep(1)
