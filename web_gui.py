@@ -1,22 +1,10 @@
-import random
-
-from flask import Flask, render_template
+from flask import Flask
+from Applications.Animator.animator import ListAnimations
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def menu():
     return "Menü"
 
-
-@app.route('/tic')
-def tictactoe():
-    return render_template("tic_tac_toe.html", secret=random.randint(0, 999), pid=1,
-                           pchar="x")
-    pass
-
-
-@app.route('/admin')
-def admin():
-    return "Admin"
+app.add_url_rule('/animations/', view_func=ListAnimations.as_view('list_animations'))
