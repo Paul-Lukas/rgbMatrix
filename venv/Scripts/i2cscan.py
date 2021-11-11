@@ -1,4 +1,4 @@
-#!C:\Users\paull\Documents\selbst programmiert\python\infoMatrix\venv\Scripts\python.exe
+#!C:\Users\paull\Documents\selbst programmiert\python\rgbMatrix\venv\Scripts\python.exe
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2018-2020, Emmanuel Blot <emmanuel.blot@free.fr>

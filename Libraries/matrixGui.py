@@ -10,7 +10,7 @@ class NeoMatrixGui():
         self.width = width
         self.height = height
 
-        self.root.title("Matrix Sim")
+        self.root.title("Application Sim")
         self.root.geometry(str(self.width*self.size)+"x"+str(self.height*self.size))
 
         self.canvas = tk.Canvas(

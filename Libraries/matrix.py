@@ -3,8 +3,8 @@ import neopixel
 
 class NeoMatrix:
     """
-    Handels all the Conversion from Matrix to String
-    The Matrix must be horizontal
+    Handels all the Conversion from Application to String
+    The Application must be horizontal
     """
     matrix = []
     width = 0
@@ -53,13 +53,13 @@ class NeoMatrix:
 
     def __convert_matrix(self, matrix) -> list:
         """
-        Converts a specific matrix to an Array
+        Converts a specific Application to an Array
         Example: input=  [
                             [1, 2, 3, 4, 5],
                             [10, 9, 8, 7, 6],
                             [11, 12, 13, 14, 15]
                          ]
-        :param matrix: Matrix(two dimensional array) uneven columns flipped
+        :param matrix: Application(two dimensional array) uneven columns flipped
         :return: one dimensional Array
         """
         index = []
