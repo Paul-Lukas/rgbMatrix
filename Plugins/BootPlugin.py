@@ -9,49 +9,50 @@ from Libraries import matrix
 
 
 class BootPlugin(Plugin):
-    def __init__(self):
-        pass
+	def __init__(self):
+		pass
 
-    def run(self):
-        pixels = neopixel.NeoPixel(board.D18, 450, auto_write=False)
-        omatrix = matrix.NeoMatrix(15, 30, pixels)
 
-        omatrix.fill_all((0, 0, 0))
-        time.sleep(1)
-        # R
-        omatrix.fill_all((255, 0, 0))
-        time.sleep(1)
-        # G
-        omatrix.fill_all((0, 255, 0))
-        time.sleep(1)
-        # B
-        omatrix.fill_all((0, 0, 255))
-        time.sleep(1)
-        omatrix.fill_all((255, 255, 255))
-        time.sleep(1)
-        omatrix.fill_all((0, 0, 0))
-        time.sleep(1)
+	def run(self):
+		pixels = neopixel.NeoPixel(board.D18, 450, auto_write = False)
+		omatrix = matrix.NeoMatrix(15, 30, pixels)
 
-        omatrix[0, 0] = (0, 0, 255)
-        omatrix[14, 0] = (0, 255, 255)
-        omatrix[0, 29] = (0, 255, 255)
-        omatrix[14, 29] = (0, 255, 0)
+		omatrix.fill_all((0, 0, 0))
+		time.sleep(1)
+		# R
+		omatrix.fill_all((255, 0, 0))
+		time.sleep(1)
+		# G
+		omatrix.fill_all((0, 255, 0))
+		time.sleep(1)
+		# B
+		omatrix.fill_all((0, 0, 255))
+		time.sleep(1)
+		omatrix.fill_all((255, 255, 255))
+		time.sleep(1)
+		omatrix.fill_all((0, 0, 0))
+		time.sleep(1)
 
-        omatrix.submit_all()
+		omatrix[0, 0] = (0, 0, 255)
+		omatrix[14, 0] = (0, 255, 255)
+		omatrix[0, 29] = (0, 255, 255)
+		omatrix[14, 29] = (0, 255, 0)
 
-        time.sleep(2)
+		omatrix.submit_all()
 
-        for i in range(30):
-            for j in range(15):
-                if (i + j) % 2 == 0:
-                    omatrix[j, i] = (255, 0, 0)
-                else:
-                    omatrix[j, i] = (0, 0, 255)
+		time.sleep(2)
 
-                time.sleep(0.25)
-                omatrix.submit_all()
+		for i in range(30):
+			for j in range(15):
+				if (i + j) % 2 == 0:
+					omatrix[j, i] = (255, 0, 0)
+				else:
+					omatrix[j, i] = (0, 0, 255)
 
-        omatrix.fill_all((0, 0, 0))
-        omatrix.submit_all()
+				time.sleep(0.25)
+				omatrix.submit_all()
 
-        print("Fertig")
+		omatrix.fill_all((0, 0, 0))
+		omatrix.submit_all()
+
+		print("Fertig")
