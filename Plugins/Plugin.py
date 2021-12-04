@@ -1,15 +1,14 @@
-#from Libraries.matrix import NeoMatrix
 from Application import BaseApplication
+from Libraries.matrix import NeoMatrix
+
 
 class Plugin:
 
-    pluginName = "Oeffentlicher Name"
-
-    def __init__(self, app:BaseApplication):
+    def __init__(self, app: BaseApplication, matrix: NeoMatrix):
+        self.matrix = matrix
         self.app = app
+        self.pluginName = "Put Plugin Name Here"
+        self.pluginDescription = "Put Descripiton here"
 
     def run(self):
         raise NotImplementedError
-
-    def get_name(self):
-        return self.pluginName

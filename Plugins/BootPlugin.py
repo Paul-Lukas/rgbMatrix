@@ -9,8 +9,9 @@ from Libraries import matrix
 
 
 class BootPlugin(Plugin):
-	def __init__(self):
-		pass
+    def __init__(self):
+        super.__init__()
+
 
 
 	def run(self):

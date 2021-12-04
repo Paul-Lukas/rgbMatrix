@@ -1,4 +1,5 @@
 from Plugins.Plugin import Plugin
+from Plugins.BootPlugin import BootPlugin
 
 import inspect
 import pkgutil
@@ -12,7 +13,8 @@ class BaseApplication:
 
 	def run(self):
 		self.__reload_plugins()
-		self.__run_plugins()
+		self.__boot_plugin()
+        self.__run_plugins()
 
 
 	def __reload_plugins(self):
@@ -32,3 +34,6 @@ class BaseApplication:
 	def __run_plugins(self):
 		for plugin in self.plugins:
 			plugin.run()
+
+    def __boot_plugin(self, matrix, ):
+        BootPlugin.run(self, matrix)

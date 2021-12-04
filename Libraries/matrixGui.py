@@ -40,7 +40,7 @@ class NeoMatrixGui():
 		self.matrix[key[0]][key[1]] = value
 
 
-	def __getChangedIndices(array1, array2):
+	def __getChangedIndices(self, array1, array2):
 		out = []
 		for i in range(len(array1)):
 			for j in range(len(array1[i])):
