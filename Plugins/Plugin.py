@@ -1,10 +1,6 @@
-from Application import BaseApplication
-from Libraries.matrix import NeoMatrix
-
-
 class Plugin:
 
-    def __init__(self, app: BaseApplication, matrix: NeoMatrix):
+    def __init__(self, app, matrix):
         self.matrix = matrix
         self.app = app
         self.pluginName = "Put Plugin Name Here"

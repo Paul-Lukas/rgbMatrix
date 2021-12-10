@@ -1,5 +1,4 @@
 from Plugins.Plugin import Plugin
-from Plugins.BootPlugin import BootPlugin
 
 import inspect
 import pkgutil
@@ -7,14 +6,17 @@ import pkgutil
 
 class BaseApplication:
 
-    def __init__(self):
+    def __init__(self, matrix):
+        self.matrix = matrix
         self.plugins = []
 
 
     def run(self):
         self.__reload_plugins()
-        self.__boot_plugin()
-    self.__run_plugins()
+
+        #TODO: Run boot as normal Plugin
+        self.__boot_plugin(self.matrix)
+        self.__run_plugins(self.matrix)
 
 
     def __reload_plugins(self):
@@ -31,10 +33,10 @@ class BaseApplication:
                         self.plugins.append(c())
 
 
-    def __run_plugins(self):
+    def __run_plugins(self, matrix):
         for plugin in self.plugins:
-            plugin.run()
+            plugin.run(matrix)
 
-#TODO: Make matrix variable
-def __boot_plugin(self):
-    BootPlugin.run(self)
+
+    def __boot_plugin(self, matrix):
+        BootPlugin.run(matrix)
