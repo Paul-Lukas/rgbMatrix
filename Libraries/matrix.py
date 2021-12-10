@@ -3,14 +3,15 @@ import neopixel
 
 class NeoMatrix:
     """
-    Handels all the Conversion from Matrix to String
-    The Matrix must be horizontal
+    Handels all the Conversion from Application to String
+    The Application must be horizontal
     """
     matrix = []
     width = 0
     height = 0
 
     __pixels = object
+
 
     def __init__(self, width: int, height: int, pixels: neopixel.NeoPixel):
         self.width = width
@@ -20,15 +21,18 @@ class NeoMatrix:
 
         self.matrix = [[(0, 0, 0) for j in range(height)] for i in range(width)]
 
+
     def __getitem__(self, item):
         if len(item) != 2:
             raise ValueError('Index needs two values example: [1, 2]')
         return self.matrix[item[0]][item[1]]
 
+
     def __setitem__(self, key, value):
         if len(key) != 2:
             raise ValueError('Index needs two values example: [1, 2]')
         self.matrix[key[0]][key[1]] = value
+
 
     def submit_all(self):
         """
@@ -39,6 +43,7 @@ class NeoMatrix:
             self.__pixels[i] = pixel
             i += 1
         self.__pixels.write()
+
 
     def fill_all(self, color: tuple):
         """
@@ -51,15 +56,32 @@ class NeoMatrix:
         self.__pixels.fill(color)
         self.__pixels.write()
 
+
+    def set_matrix(self, matrix):
+        """
+        Replace the matrix
+        :param matrix: new 2dim tupel array must be same lengh as old one
+        :return: true if lengh is right, false if not
+        """
+        if len(matrix) != len(self.matrix):
+            return False
+        else:
+            if len(matrix[0]) != len(self.matrix[0]):
+                return False
+            else:
+                self.matrix = matrix
+                return True
+
+
     def __convert_matrix(self, matrix) -> list:
         """
-        Converts a specific matrix to an Array
+        Converts a specific Application to an Array
         Example: input=  [
                             [1, 2, 3, 4, 5],
                             [10, 9, 8, 7, 6],
                             [11, 12, 13, 14, 15]
                          ]
-        :param matrix: Matrix(two dimensional array) uneven columns flipped
+        :param matrix: Application(two dimensional array) uneven columns flipped
         :return: one dimensional Array
         """
         index = []
@@ -70,6 +92,7 @@ class NeoMatrix:
                 index.append(self.__flip_array(matrix[i]))
 
         return self.__flatten_array(index)
+
 
     def __flip_array(self, array: list) -> list:
         """
@@ -84,6 +107,7 @@ class NeoMatrix:
             index = i * (-1) - 1
             flipped.append(array[index])
         return flipped
+
 
     def __flatten_array(self, array: list) -> list:
         """
