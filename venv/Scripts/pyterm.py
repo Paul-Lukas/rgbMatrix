@@ -1,4 +1,4 @@
-#!C:\Users\paull\Documents\selbst programmiert\python\rgbMatrix\venv\Scripts\python.exe
+#!C:\Users\paull\Documents\selbst programmiert\python\infoMatrix\venv\Scripts\python.exe
 
 """Simple Python serial terminal
 """
