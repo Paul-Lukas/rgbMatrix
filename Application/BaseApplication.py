@@ -1,4 +1,5 @@
 from Plugins.Plugin import Plugin
+from Libraries import matrix
 
 import inspect
 import pkgutil
@@ -14,9 +15,7 @@ class BaseApplication:
     def run(self):
         self.__reload_plugins()
 
-        #TODO: Run boot as normal Plugin
-        self.__boot_plugin(self.matrix)
-        self.__run_plugins(self.matrix)
+        self.__run_plugins()
 
 
     def __reload_plugins(self):
@@ -30,13 +29,11 @@ class BaseApplication:
                     # Only add classes that are a sub class of Plugin, but NOT Plugin itself
                     if issubclass(c, Plugin) & (c is not Plugin):
                         print(f'    Found plugin class: {c.__module__}.{c.__name__}')
-                        self.plugins.append(c())
+                        self.plugins.append(c(self, self.matrix))
 
 
-    def __run_plugins(self, matrix):
+    def __run_plugins(self):
+        #TODO: Run boot first
+
         for plugin in self.plugins:
-            plugin.run(matrix)
-
-
-    def __boot_plugin(self, matrix):
-        BootPlugin.run(matrix)
+            plugin.run()
