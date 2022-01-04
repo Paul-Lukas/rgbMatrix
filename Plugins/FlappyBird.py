@@ -1,7 +1,6 @@
 from Plugins.Plugin import Plugin
 import time
 import random
-from tkinter import *
 
 class BootPlugin(Plugin):
     def __init__(self, app, matrix):
