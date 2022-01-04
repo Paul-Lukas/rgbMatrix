@@ -65,7 +65,6 @@ class BootPlugin(Plugin):
                 else:
                     self.matrix[j, i] = (0, 0, 255)
 
-                time.sleep(0.25)
                 self.matrix.submit_all()
 
         self.matrix.fill_all((0, 0, 0))
