@@ -1,5 +1,5 @@
 from Plugins.Plugin import Plugin
-from Libraries import matrix
+from Libraries import matrixGui
 
 import inspect
 import pkgutil
