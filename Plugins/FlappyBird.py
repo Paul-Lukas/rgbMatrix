@@ -14,6 +14,7 @@ class BootPlugin(Plugin):
 
     #Run wird beim start ausgeführt und muss den Code enthalten, der im endeffekt ausgeführt werden soll
     def run(self):
+        global width, height
         def pipes(x, y, level):
             global height
             if (y < 0) | (y > height - 1):
@@ -95,7 +96,7 @@ class BootPlugin(Plugin):
 
 
         def clock():
-            for i in range (60):
+            for i in range (60):    
                 checkPipes()
                 translator()
                 time.sleep(0.017)
