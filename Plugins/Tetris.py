@@ -124,7 +124,7 @@ class BootPlugin(Plugin):
             """
             (re-)paints the canvas of the falling tetromino
             """
-            if BoardMode:
+            if boardMode:
                 self.matrix.set_matrix(pixelBoard)
                 self.matrix.submit_all()
             else:
@@ -142,7 +142,7 @@ class BootPlugin(Plugin):
             The list "already painted" will be updated. It stores where canvas
                 of landed tetrominos are already painted.
             """
-            if BoardMode:
+            if boardMode:
                 self.matrix.set_matrix(pixelBoard)
                 self.matrix.submit_all()
             else:
@@ -161,7 +161,7 @@ class BootPlugin(Plugin):
             deletes all canvas of fallen tetrominos and repaints them.
             Function is triggered when a row (or multiple) is/are removed
             """
-            if BoardMode:
+            if boardMode:
                 self.matrix.set_matrix(pixelBoard)
                 self.matrix.submit_all()
             else:
