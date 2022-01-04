@@ -1,4 +1,5 @@
 from Application.BaseApplication import BaseApplication
+from Libraries import matrix
 
 import board
 import neopixel
