@@ -6,6 +6,7 @@ class BootPlugin(Plugin):
     self.FalschGeloest = 25
     self.z = 0
     self.matrix.fill_all((0, 0, 0))
+    self.lauf = 0
         
     def __init__(self, app, matrix):
         super().__init__(app, matrix)
@@ -30,7 +31,7 @@ class BootPlugin(Plugin):
         self.matrix[14, 28] = (204, 215, 69)
 
     
-    if (run <= 50):
+    if (self.lauf <= 50):
          if (z <= 24):
              self.matrix[0, self.FalschGeloest] = (255, 0, 0)
              self.matrix[1, self.FalschGeloest] = (255, 0, 0)
@@ -43,8 +44,7 @@ class BootPlugin(Plugin):
              self.FalschGeloest = self.FalschGeloest - 1
              self.z = self.z + 1
              time.sleep(0.01)
-             run = run + 1
-             run(run):
+             self.lauf = self.lauf + 1
                     
          else:
             self.matrix[0, self.FalschGeloest] = (0, 0, 0)
@@ -58,8 +58,7 @@ class BootPlugin(Plugin):
             self.FalschGeloest = self.FalschGeloest + 1
 
             time.sleep(0.01)
-            run = run + 1
-            run(run):
+            self.lauf = self.lauf + 1
     else:
         self.z = 0
         return   
