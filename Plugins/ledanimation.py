@@ -1,7 +1,7 @@
 from Plugins.Plugin import Plugin
 
 import time
-import random
+from random import randint
 
 
 class BootPlugin(Plugin):
