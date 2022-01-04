@@ -99,7 +99,7 @@ class BootPlugin(Plugin):
             wand += [reihe] 
 
         
-        for i in range(30)
+        for i in range(30):
             random()
         return
         
