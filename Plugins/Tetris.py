@@ -13,9 +13,9 @@ class BootPlugin(Plugin):
     #Run wird beim start ausgeführt und muss den Code enthalten, der im endeffekt ausgeführt werden soll
     def run(self):
         
-        boardMode = False
+        boardMode = True
         dummyTester = True
-        heuselMode = True
+        heuselMode = False
         randomRotations = True
         # --------------- game Size
         game_width = 15
