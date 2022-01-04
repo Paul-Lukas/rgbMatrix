@@ -3,9 +3,9 @@ import time
 from Plugins.Plugin import Plugin
 
 class BootPlugin(Plugin):
-self.FalschGeloest = 25
-self.z = 0
-self.matrix.fill_all((0, 0, 0))
+    self.FalschGeloest = 25
+    self.z = 0
+    self.matrix.fill_all((0, 0, 0))
         
     def __init__(self, app, matrix):
         super().__init__(app, matrix)
