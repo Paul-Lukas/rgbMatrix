@@ -12,7 +12,7 @@ class BootPlugin(Plugin):
     self.matrix.fill_all((0, 0, 0))
     
     def run(self):
-        def bruh(self.lauf):
+        def bruh(lauf):
             self.matrix.fill_all((0, 0, 0))
             self.matrix[0, 29] = (236, 178, 83)
             self.matrix[1, 29] = (236, 178, 83)
@@ -32,7 +32,7 @@ class BootPlugin(Plugin):
             self.matrix[14, 28] = (204, 215, 69)
 
         
-        if (self.lauf <= 50):
+        if (lauf <= 50):
              if (self.z <= 24):
                  self.matrix[0, self.FalschGeloest] = (255, 0, 0)
                  self.matrix[1, self.FalschGeloest] = (255, 0, 0)
@@ -45,8 +45,8 @@ class BootPlugin(Plugin):
                  self.FalschGeloest = self.FalschGeloest - 1
                  self.z = self.z + 1
                  time.sleep(0.01)
-                 self.lauf = self.lauf + 1
-                 bruh(self.lauf):
+                 lauf = lauf + 1
+                 bruh(lauf):
                         
              else:
                 self.matrix[0, self.FalschGeloest] = (0, 0, 0)
@@ -60,7 +60,7 @@ class BootPlugin(Plugin):
                 self.FalschGeloest = self.FalschGeloest + 1
 
                 time.sleep(0.01)
-                self.lauf = self.lauf + 1
+                lauf = lauf + 1
                 bruh(self.lauf):
         else:
             self.z = 0
