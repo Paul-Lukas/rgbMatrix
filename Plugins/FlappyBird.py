@@ -97,7 +97,7 @@ class BootPlugin(Plugin):
             for i in range (60):
                 checkPipes()
                 translator()
-                time.sleep(0.017)
+                time.sleep(0.1)
 
 
         game = [[0 for j in range(self.height)] for i in range(self.width)]
