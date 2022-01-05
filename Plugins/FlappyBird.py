@@ -51,7 +51,7 @@ class BootPlugin(Plugin):
         def checkPipes():
             global cX, cY, cLevel, width, height
 
-            matrix.fill_all((0, 188, 255))
+            self.matrix.fill_all((0, 188, 255))
             if (cX > -2) & (cX < width + 1):
                 print("Case 1: ", cX, cY, cLevel)
                 pipes(cX, cY, cLevel)
@@ -90,8 +90,8 @@ class BootPlugin(Plugin):
             tupleMatrix = [[(0, 0, 0) for j in range(15)] for i in range(30)]
             for a in range(height):
                 for b in range(width):
-                    matrix[a, b] = getColor(game[b][a])
-            matrix.set_matrix(tupleMatrix)
+                    self.matrix[a, b] = getColor(game[b][a])
+            self.matrix.set_matrix(tupleMatrix)
 
 
         def clock():
