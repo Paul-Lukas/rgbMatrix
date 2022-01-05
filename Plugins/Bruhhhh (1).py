@@ -3,9 +3,9 @@ import time
 from Plugins.Plugin import Plugin
 
 class BootPlugin(Plugin):
-FalschGeloest = 25
-z = 0
-lauf = 0
+    FalschGeloest = 25
+    z = 0
+    lauf = 0
         
     def __init__(self, app, matrix):
         super().__init__(app, matrix)
