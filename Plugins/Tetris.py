@@ -719,5 +719,5 @@ class BootPlugin(Plugin):
         if boardMode == False:
             tkFenster.mainloop()
         """
-        
+        mainLoopwDummy()
 
