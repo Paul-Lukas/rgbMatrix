@@ -128,7 +128,7 @@ class BootPlugin(Plugin):
                 self.matrix.set_matrix(pixelBoard)
                 self.matrix.submit_all()
             else:
-                global alreadyPainted
+                #global alreadyPainted
                 deleteTetromino()
                 for x in range(1, pixelBoard_xLength-1):
                     for y in range(1, pixelBoard_yLength-1):
@@ -146,7 +146,7 @@ class BootPlugin(Plugin):
                 self.matrix.set_matrix(pixelBoard)
                 self.matrix.submit_all()
             else:
-                global alreadyPainted
+                #global alreadyPainted
                 deleteTetromino()
                 for x in range(1, pixelBoard_xLength-1):
                     for y in range(1, pixelBoard_yLength-1):
@@ -165,7 +165,7 @@ class BootPlugin(Plugin):
                 self.matrix.set_matrix(pixelBoard)
                 self.matrix.submit_all()
             else:
-                global alreadyPainted
+                #global alreadyPainted
                 deleteFixedTetrominos()
                 alreadyPainted = [[0 for i in range(pixelBoard_yLength)] for j in range(pixelBoard_xLength)]
                 for x in range(1, pixelBoard_xLength-1):
