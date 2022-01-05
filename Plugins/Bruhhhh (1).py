@@ -46,7 +46,7 @@ class BootPlugin(Plugin):
                  self.z = self.z + 1
                  time.sleep(0.01)
                  lauf = lauf + 1
-                 bruh(lauf):
+                 bruh(lauf)
                         
              else:
                 self.matrix[0, self.FalschGeloest] = (0, 0, 0)
@@ -61,7 +61,7 @@ class BootPlugin(Plugin):
 
                 time.sleep(0.01)
                 lauf = lauf + 1
-                bruh(self.lauf):
+                bruh(lauf)
         else:
             self.z = 0
             return   
