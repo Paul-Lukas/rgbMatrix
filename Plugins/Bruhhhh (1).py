@@ -32,37 +32,37 @@ class BootPlugin(Plugin):
             self.matrix[14, 28] = (204, 215, 69)
 
         
-        if (lauf <= 50):
-             if (self.z <= 24):
-                 self.matrix[0, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[1, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[4, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[5, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[9, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[10, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[13, self.FalschGeloest] = (255, 0, 0)
-                 self.matrix[14, self.FalschGeloest] = (255, 0, 0)
-                 self.FalschGeloest = self.FalschGeloest - 1
-                 self.z = self.z + 1
-                 time.sleep(0.01)
-                 lauf = lauf + 1
-                 bruh(lauf)
-                        
-             else:
-                self.matrix[0, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[1, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[4, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[5, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[9, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[10, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[13, self.FalschGeloest] = (0, 0, 0)
-                self.matrix[14, self.FalschGeloest] = (0, 0, 0)
-                self.FalschGeloest = self.FalschGeloest + 1
+            if (lauf <= 50):
+                 if (self.z <= 24):
+                     self.matrix[0, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[1, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[4, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[5, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[9, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[10, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[13, self.FalschGeloest] = (255, 0, 0)
+                     self.matrix[14, self.FalschGeloest] = (255, 0, 0)
+                     self.FalschGeloest = self.FalschGeloest - 1
+                     self.z = self.z + 1
+                     time.sleep(0.01)
+                     lauf = lauf + 1
+                     bruh(lauf)
 
-                time.sleep(0.01)
-                lauf = lauf + 1
-                bruh(lauf)
-        else:
-            self.z = 0
-            return   
+                 else:
+                    self.matrix[0, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[1, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[4, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[5, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[9, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[10, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[13, self.FalschGeloest] = (0, 0, 0)
+                    self.matrix[14, self.FalschGeloest] = (0, 0, 0)
+                    self.FalschGeloest = self.FalschGeloest + 1
+
+                    time.sleep(0.01)
+                    lauf = lauf + 1
+                    bruh(lauf)
+            else:
+                self.z = 0
+                return   
 
