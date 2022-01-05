@@ -30,7 +30,7 @@ class BootPlugin(Plugin):
             self.matrix[14, 29] = (204, 215, 69)
             self.matrix[13, 28] = (204, 215, 69)
             self.matrix[14, 28] = (204, 215, 69)
-
+            self.matrix.submit_all()
         
             if (lauf <= 50):
                  if (self.z <= 24):
