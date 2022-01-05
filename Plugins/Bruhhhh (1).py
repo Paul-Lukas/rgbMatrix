@@ -9,7 +9,7 @@ class BootPlugin(Plugin):
         
     def __init__(self, app, matrix):
         super().__init__(app, matrix)
-    self.matrix.fill_all((0, 0, 0))
+        self.matrix.fill_all((0, 0, 0))
     
     def run(self):
         def bruh(lauf):
