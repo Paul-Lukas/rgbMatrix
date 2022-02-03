@@ -41,6 +41,8 @@ class NeoMatrix:
         """
         changes = self.utils.getChangedIndices(self.omatrix, self.matrix)
 
+        self.omatrix = [row[:] for row in self.matrix]
+
         for i in range(len(changes)):
             pixelChange = (self.utils.getNumForCords(changes[i][0], changes[i][0], self.height))
             self.__pixels[pixelChange] = self.matrix[changes[i][0]][changes[i][0]]

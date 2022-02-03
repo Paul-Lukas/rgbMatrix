@@ -26,9 +26,9 @@ class Utils:
                     out.append((i, j))
         return out
 
-    def getNumForCords(self, x: int, y: int, xMax: int):
+    def getNumForCords(self, x: int, y: int, yLen: int):
         if (x % 2) == 0:
-            n = y + (x * xMax)
+            n = y + (x * yLen)
         else:
-            n = (x * xMax) + (xMax - y - 1)
+            n = (x * yLen) + (yLen - y - 1)
         return n
