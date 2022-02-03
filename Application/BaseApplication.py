@@ -29,11 +29,18 @@ class BaseApplication:
                     # Only add classes that are a sub class of Plugin, but NOT Plugin itself
                     if issubclass(c, Plugin) & (c is not Plugin):
                         print(f'    Found plugin class: {c.__module__}.{c.__name__}')
-                        self.plugins.append(c(self, self.matrix))
+                        try:
+                            self.plugins.append(c(self, self.matrix))
+                        except Exception:
+                            print("Error trying to add Plugin")
+
 
 
     def __run_plugins(self):
         #TODO: Run boot first
 
         for plugin in self.plugins:
-            plugin.run()
+            try:
+                plugin.run()
+            except Exception:
+                print("Error trying to run Plugin" + plugin.pluginName)
