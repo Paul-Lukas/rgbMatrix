@@ -1,5 +1,5 @@
 import neopixel
-from utils import Utils
+from Libraries.utils import Utils
 
 
 class NeoMatrix:
@@ -44,8 +44,8 @@ class NeoMatrix:
         self.omatrix = [row[:] for row in self.matrix]
 
         for i in range(len(changes)):
-            pixelChange = (self.utils.getNumForCords(changes[i][0], changes[i][0], self.height))
-            self.__pixels[pixelChange] = self.matrix[changes[i][0]][changes[i][0]]
+            pixelChange = (self.utils.getNumForCords(changes[i][0], changes[i][1], self.height))
+            self.__pixels[pixelChange] = self.matrix[changes[i][0]][changes[i][1]]
         self.__pixels.write()
 
     def fill_all(self, color: tuple):

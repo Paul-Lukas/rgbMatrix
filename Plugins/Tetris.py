@@ -667,7 +667,6 @@ class BootPlugin(Plugin):
     
     
     def run(self):
-        print("Penis")
         
         self.matrix.set_matrix(self.prev)
         self.matrix.submit_all()
