@@ -1,5 +1,5 @@
 import neopixel
-from utils import Utils
+from Libraries.utils import Utils
 
 
 class NeoMatrix:
