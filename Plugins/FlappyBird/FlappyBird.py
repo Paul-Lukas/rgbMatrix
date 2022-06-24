@@ -14,7 +14,7 @@ class FlappyBird(BasePlugin):
 
     def __init__(self, app, output):
         super().__init__(app, output)
-        #self.pluginName = "Flappy-Bird"
+        self.pluginName = "Flappy-Bird"
         self.version = "pre 0.1"
 
 
