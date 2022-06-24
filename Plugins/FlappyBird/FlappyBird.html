@@ -1,0 +1,9 @@
+<h1 onclick="startPlugin()">START PLUGIN: {{ start_name }}</h1>
+
+<script>
+function startPlugin() {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", "/plugin/{{ start_id }}/input?start_id={{ start_id }}", false ); // false for synchronous request
+	xmlHttp.send( null );
+}
+</script>
